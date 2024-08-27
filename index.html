@@ -1,17 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
+    <!-- font style -->
+    <style>
+        .manrope-font {
+            font-family: "Manrope", sans-serif;
+        }
+    </style>
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'btn-color': 'rgb(171, 239, 95)',
+                        'light-btn-color': 'rgba(171, 239, 95, 0.5)',
+                        'font-primary': 'rgb(73, 73, 73)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- daisyUI cnd -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+
+<body class="manrope-font">
     <!-- header section -->
-    <header></header>
+    <header class=" ml-7 mr-5 lg:ml-20 mr-20">
+        <!-- nav -->
+        <nav class="mt-5">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start flex items-center">
+                    <!-- Logo with Icon -->
+                    <a class="text-xl font-bold flex items-center space-x-2">
+                        <!-- Heroicon arrow-up-right -->
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6 -rotate-45 bg-btn-color rounded-full p-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                        <span class="font-bold">Rinterio</span>
+                    </a>
+                </div>
+                <!-- Hamburger Menu for Small Screens -->
+                <div class="navbar-end flex items-center space-x-4 lg:hidden">
+                    <div class="dropdown dropdown-end">
+                        <label tabindex="0" class="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a>Home</a></li>
+                            <li><a>Services</a></li>
+                            <li><a>Portfolio</a></li>
+                            <li><a>Blogs</a></li>
+                            <li><a>Contact Us</a></li>
+                            <li>
+                                <button class="btn btn-ghost btn-circle">
+                                    <!-- Heroicon search -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 bg-slate-200 rounded-full p-1"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M11 4a7 7 0 100 14 7 7 0 000-14zm0 14l6 6" />
+                                    </svg>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="btn btn-ghost btn-circle">
+                                    <!-- Heroicon shopping-cart -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 bg-slate-200 rounded-full p-1"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.6 8H21M7 13L5.4 5M7 13h10M9 17h2m4 0h2" />
+                                    </svg>
+                                </button>
+                            </li>
+                            <li>
+                                <a class="btn bg-btn-color font-extrabold rounded-full flex items-center space-x-1">
+                                    <span>Book Consult</span>
+                                    <!-- Heroicon arrow-up-right -->
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-6 w-6 -rotate-45 text-white bg-black rounded-full p-1" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Regular Navigation for Large Screens -->
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a class="text-black font-semibold">Home</a></li>
+                        <li><a>Services</a></li>
+                        <li><a>Portfolio</a></li>
+                        <li><a>Blogs</a></li>
+                        <li><a>Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end hidden lg:flex items-center space-x-4">
+                    <!-- Search Icon -->
+                    <button class="btn btn-ghost btn-circle">
+                        <!-- Heroicon search -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 bg-slate-200 rounded-full p-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M11 4a7 7 0 100 14 7 7 0 000-14zm0 14l6 6" />
+                        </svg>
+                    </button>
+                    <!-- Cart Icon -->
+                    <button class="btn btn-ghost btn-circle">
+                        <!-- Heroicon shopping-cart -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 bg-slate-200 rounded-full p-1" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.6 8H21M7 13L5.4 5M7 13h10M9 17h2m4 0h2" />
+                        </svg>
+                    </button>
+                    <!-- Book Consult Button -->
+                    <a class="btn bg-btn-color font-extrabold rounded-full flex items-center space-x-1">
+                        <span>Book Consult</span>
+                        <!-- Heroicon arrow-up-right -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 -rotate-45 text-white bg-black rounded-full p-1"
+                            fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- banner section -->
+        <div class="hero min-h-screen flex items-center justify-center mt-7 px-4 sm:px-6 md:px-8">
+          <div class="flex flex-col items-center text-center space-y-6">
+            <div class="hero-content">
+              <img src="./assets/banner.png" alt="Banner" class="w-full max-w-[500px] object-cover">
+            </div>
+            <div class="w-full max-w-[1150px] flex flex-col items-center">
+              <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold">A barn house of this design has a striking appearance</h1>
+              <p class="py-4 sm:py-6 font-medium text-font-primary text-base sm:text-lg ">
+                The barn house captivates with its blend of rustic charm and modern sophistication, featuring weathered wood, sleek metal accents, and large windows that flood the space with natural light.
+              </p>
+              <button class="btn bg-light-btn-color rounded-full px-4 py-2 sm:px-6 sm:py-3 flex items-center space-x-2">
+                <span>View Details</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 -rotate-45 bg-btn-color rounded-full p-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        
+    </header>
     <!-- main section -->
-     <main></main>
-     <!-- footer section -->
-      <footer></footer>
+    <main>
+
+    </main>
+    <!-- footer section -->
+    <footer>
+
+    </footer>
 
 </body>
+
 </html>
